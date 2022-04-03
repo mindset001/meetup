@@ -59,7 +59,7 @@ export default {
 
 <style scoped>
      .msg{
-    max-height: 60vh;
+    max-height: 70vh;
     overflow: scroll;
     
    

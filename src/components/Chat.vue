@@ -1,9 +1,11 @@
 <template>
   <div class="mt-10">
-<h1 class="text-center text-2xl "><strong>Meet</strong>UP</h1>
+
    <div v-if="isLogin" class="login">
         <div style="" class="mobile">
-          <Avatar :src="user.photoURL"  />
+         <Avatar :src="user.photoURL"  />
+        <h1 class="text-center text-2xl "><strong>Meet</strong>UP</h1>
+         
           <button class="text-gray-400 hover:text-white button" @click="Signout">
           Sign Out
         </button>
@@ -66,10 +68,10 @@ export default {
       messages,
       () => {
         nextTick(() => {
-          bottom.value.scrollIntoView({ behavior: 'smooth' })
+          bottom.value.scrollIntoView({ behavior: 'smooth', block: "end", inline: "nearest" })
         })
       },
-      { deep: true }
+      { deep: false }
     )
 
 
@@ -95,6 +97,7 @@ export default {
 
 *{
   background: url('https://res.cloudinary.com/mindset/image/upload/v1648979740/75901-background_w2ni6g.gif');
+ 
 }
 
 form{
@@ -120,12 +123,11 @@ form{
   .button{
     width: 118px;
     height: 50px;
-    left: 912px;
     background: #621A7B;
     box-shadow: 1px 3px 4px rgba(98, 26, 123, 0.18);
     border-radius: 10px;
     color: #fff;
-    margin-top: 30px;
+  
   }
  
 
@@ -154,7 +156,7 @@ form{
     box-shadow: 1px 3px 4px rgba(98, 26, 123, 0.18);
     border-radius: 10px;
     color: #fff;
-    margin-top: 30px;
+    
   }
   .bottom{
     border-bottom: solid 2px #621A7B;

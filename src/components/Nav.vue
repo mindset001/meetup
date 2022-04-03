@@ -63,7 +63,7 @@ export default {
 
   p{
       font-family: 'Montserrat';
-      padding-top: 80px;;
+      padding-top: 80px;
       font-style: normal;
       font-weight: 500;
       font-size: 20px;
