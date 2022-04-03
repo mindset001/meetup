@@ -96,5 +96,11 @@ export default {
   .text{
       font-size: 40px;
   }
+
+   .dark{
+    
+    padding-top: 138px;
+    text-align: center;
+  }
   }
 </style>

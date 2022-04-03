@@ -18,27 +18,11 @@
       <!-- <img src="../assets/img.gif" alt="" style="height: 40px; width:40px;"> -->
     </div>
 
+    <Scroll/>
 
-
-    <div class="mx-5 now" v-if="messages.length">
     
-      <Message
-        v-for="item in messages"
-        :key="item.id"
-        :name="item.userName"
-        :photourl="item.userPhotoURL"
-        :sender="item.userId === user.uid"
-      >
-        {{ item.text }}
-      </Message>
-
-      <!-- <div v-for="item in messages" :key="item.id">
-      {{ item.text }}
-      </div> -->
-
-    </div>
   <!-- </div> -->
-  <div ref="bottom" class="mt-20" />
+  
   <div class="bottom">
     <div class="container-sm">
 
@@ -61,9 +45,12 @@ import { useAuth } from '@/firebase'
 import { ref, watch, nextTick } from 'vue'
 import { useChat } from '@/firebase'
 import SendIcon from './SendIcon.vue'
-import Message from './Message.vue'
+import Scroll from './Scroll.vue'
+
 export default {
-  components: {  Avatar,Message, SendIcon },
+  components: { Avatar, 
+    // Message, 
+    SendIcon, Scroll },
 
   // setup() {
   //   const { user, isLogin, signOut, signup } = useAuth()
@@ -73,15 +60,19 @@ export default {
     const { user, isLogin, signOut, signup } = useAuth()
     const { messages, sendMessage } = useChat()
     const bottom = ref(null)
+
+    
     watch(
       messages,
       () => {
         nextTick(() => {
-          bottom.value?.scrollIntoView({ behavior: 'smooth' })
+          bottom.value.scrollIntoView({ behavior: 'smooth' })
         })
       },
       { deep: true }
     )
+
+
     const message = ref('')
     const send = () => {
       sendMessage(message.value, user.value, isLogin.value)
@@ -134,6 +125,11 @@ form{
     color: #fff;
     margin-top: 30px;
   }
+  .msg{
+  
+    max-height: 50vh;
+    overflow: scroll;
+  }
 
  @media screen and (max-width: 768px){
     input {
@@ -143,6 +139,7 @@ form{
      .now{
       padding-left: 0em;
       padding-right: 0em;
+
   }
   .mobile{
       display:flex;
