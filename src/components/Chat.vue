@@ -1,5 +1,5 @@
 <template>
-  <div class="container-sm mt-10">
+  <div class="mt-10">
 <h1 class="text-center text-2xl "><strong>Meet</strong>UP</h1>
    <div v-if="isLogin" class="login">
         <div style="" class="mobile">
@@ -23,8 +23,8 @@
     
   <!-- </div> -->
   
-  <div class="bottom">
-    <div class="container-sm">
+  <div class="">
+    <div class="bottom">
 
       <form v-if="isLogin" @submit.prevent="send">
 
@@ -32,7 +32,7 @@
         <input v-model="message" placeholder="Message" required />
 
         <button type="submit">
-          <SendIcon />
+          <SendIcon class="icon"/>
         </button>
         
       </form>
@@ -95,13 +95,13 @@ export default {
 
 *{
   background: url('https://res.cloudinary.com/mindset/image/upload/v1648979740/75901-background_w2ni6g.gif');
-  background-color: #000;
 }
 
 form{
   display: flex;
   justify-content: center;
   align-items: center;
+  
   
 }
   input{
@@ -160,9 +160,10 @@ form{
     border-radius: 10px;
     position: absolute;
     bottom: 0;
-   
+    background: transparent;
 
   }
+  
  
 }
 
