@@ -1,11 +1,24 @@
+import { onAuthStateChanged } from 'firebase/auth'
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import { auth } from '../firebase'
+
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    
+    component: () => import(Home.vue),
+    beforeEnter: (to, from, next) => {
+      onAuthStateChanged(auth, user => {
+        if(user){
+          next("/chat")
+        }else{
+          next('/')
+        }
+      })
+    }
   },
   {
     path: '/about',
@@ -13,7 +26,8 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/Nav.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/Nav.vue'),
+
   },
   {
     path: '/chat',
@@ -21,7 +35,16 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/Chat.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/Chat.vue'),
+    beforeEnter: (to, from, next) => {
+      onAuthStateChanged(auth, user => {
+        if(user){
+          next()
+        }else{
+          next("/")
+        }
+      })
+    }
   },
 ]
 

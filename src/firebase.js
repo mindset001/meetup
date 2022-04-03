@@ -19,7 +19,7 @@ const app = initializeApp({
       }
 )
 
-const auth = fireAuth.getAuth(app)
+export const auth = fireAuth.getAuth(app)
 
 export function useAuth(){
     const user = ref(null)
