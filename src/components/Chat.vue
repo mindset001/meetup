@@ -1,5 +1,5 @@
 <template>
-  <div class="container-sm mt-20">
+  <div class="container-sm mt-10">
 <h1 class="text-center text-2xl "><strong>Meet</strong>UP</h1>
    <div v-if="isLogin" class="login">
         <div style="" class="mobile">
@@ -125,11 +125,7 @@ form{
     color: #fff;
     margin-top: 30px;
   }
-  .msg{
-  
-    max-height: 50vh;
-    overflow: scroll;
-  }
+ 
 
  @media screen and (max-width: 768px){
     input {
@@ -147,7 +143,7 @@ form{
         justify-content:space-between;
         padding-left: 15px;
         padding-right: 15px;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
   }
    .button{
     width: 88px;
@@ -157,6 +153,12 @@ form{
     border-radius: 10px;
     color: #fff;
     margin-top: 30px;
+  }
+  .bottom{
+    border-bottom: solid 2px #621A7B;
+    border-radius: 10px;
+   
+
   }
  
 }

@@ -60,7 +60,8 @@ export default {
 <style scoped>
      .msg{
   
-    max-height: 50vh;
+    max-height: 60vh;
     overflow: scroll;
+    border-top: solid 1px #621A7B;
   }
 </style>
