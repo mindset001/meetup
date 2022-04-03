@@ -23,8 +23,8 @@
     
   <!-- </div> -->
   
-  <div class="">
-    <div class="bottom">
+  <div class="bottom">
+    <div class="">
 
       <form v-if="isLogin" @submit.prevent="send">
 
@@ -159,7 +159,7 @@ form{
   .bottom{
     border-bottom: solid 2px #621A7B;
     border-radius: 10px;
-    position: absolute;
+    position: sticky;
     bottom: 0;
   
 
