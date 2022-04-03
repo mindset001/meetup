@@ -159,8 +159,10 @@ form{
   .bottom{
     border-bottom: solid 2px #621A7B;
     border-radius: 10px;
-    position: sticky;
+    position: fixed;
     bottom: 0;
+    height: 100px;
+    overflow: hidden;
   
 
   }
