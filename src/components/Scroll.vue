@@ -15,7 +15,7 @@
       <!-- <div v-for="item in messages" :key="item.id">
       {{ item.text }}
       </div> -->
-        <div ref="bottom" class="mt-2" />
+        <div ref="bottom"  />
     </div>
     </div>
 </template>
@@ -43,7 +43,7 @@ export default {
           bottom.value.scrollIntoView({ behavior: 'smooth' })
         })
       },
-      { deep: true }
+      { deep: false }
     )
 
 
@@ -59,10 +59,9 @@ export default {
 
 <style scoped>
      .msg{
-  
-    max-height: 70vh;
+    max-height: 60vh;
     overflow: scroll;
-    border-top: solid 1px #000;
-    margin-top: 40px;
+    
+   
   }
 </style>

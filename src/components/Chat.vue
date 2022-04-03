@@ -110,6 +110,7 @@ form{
     width: 50%;
     height: 50px;
     padding-left: 10px;
+   
   }
   .now{
       padding-left: 10em;
@@ -160,7 +161,7 @@ form{
     border-radius: 10px;
     position: absolute;
     bottom: 0;
-    background: transparent;
+  
 
   }
   
