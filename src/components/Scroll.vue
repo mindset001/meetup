@@ -62,6 +62,6 @@ export default {
   
     max-height: 60vh;
     overflow: scroll;
-    border-top: solid 1px #621A7B;
+    border-top: solid 1px #000;
   }
 </style>

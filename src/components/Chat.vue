@@ -102,6 +102,7 @@ form{
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
   input{
     border: solid 1px #000;
@@ -157,6 +158,8 @@ form{
   .bottom{
     border-bottom: solid 2px #621A7B;
     border-radius: 10px;
+    position: fixed;
+    bottom: 0;
    
 
   }
