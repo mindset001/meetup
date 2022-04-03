@@ -158,7 +158,7 @@ form{
   .bottom{
     border-bottom: solid 2px #621A7B;
     border-radius: 10px;
-    position: fixed;
+    position: absolute;
     bottom: 0;
    
 
