@@ -1,13 +1,11 @@
 <template>
-  <Nav />
-  <Chat />
+  <div id="nav">
+  
+    </div>
+  <router-view/>
 </template>
 
-<script>
-import Nav from '@/components/Nav.vue'
-import Chat from '@/components/Chat.vue'
-export default {
-  name: 'App',
-  components: { Nav, Chat }
-}
-</script>
+
+
+<style>
+</style>

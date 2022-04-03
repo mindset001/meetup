@@ -29,14 +29,17 @@ export function useAuth(){
 
     const signup = async () => {
         // const googleProvider = new firebase.auth.GoogleAuthProvider()
-       const provider = new fireAuth.GoogleAuthProvider()
-        // await auth.signInWithPopup(googleProvider)
-        await fireAuth.signInWithPopup(auth, provider)
-        .then ((res) => {
-            return {
-                user: res.user
-            }
-        }) .catch ((err) => console.log(err))
+
+        try {
+          const provider = new fireAuth.GoogleAuthProvider()
+          // await auth.signInWithPopup(googleProvider)
+         const res =  await fireAuth.signInWithPopup(auth, provider)
+         return {user: res.user}
+        } catch (error) {
+          return { err: error.message}
+        }
+      
+       
     }
     const signOut = () => auth.signOut()
 
