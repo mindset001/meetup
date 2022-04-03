@@ -8,17 +8,17 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    
-    component: () => import(Home.vue),
-    beforeEnter: (to, from, next) => {
-      onAuthStateChanged(auth, user => {
-        if(user){
-          next("/chat")
-        }else{
-          next('/')
-        }
-      })
-    }
+    component: Home
+    // component: () => import(Home.vue),
+    // beforeEnter: (to, from, next) => {
+    //   onAuthStateChanged(auth, user => {
+    //     if(user){
+    //       next("/chat")
+    //     }else{
+    //       next('/')
+    //     }
+    //   })
+    // }
   },
   {
     path: '/about',
