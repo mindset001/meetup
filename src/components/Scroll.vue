@@ -59,9 +59,20 @@ export default {
 
 <style scoped>
      .msg{
-    max-height: 70vh;
-    overflow: scroll;
+    max-height: 80vh;
+    overflow: hidden;
+    margin: 0 20em;
     
    
+  }
+
+  @media screen and (max-width: 768px){
+     .msg{
+    max-height: 80vh;
+    overflow: hidden;
+    margin: 0;
+    
+   
+  }
   }
 </style>

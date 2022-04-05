@@ -4,7 +4,7 @@
 
     <div class="flex " :class="sender ? 'flex-row-reverse' : ''">
       <Avatar class="mt-1 avatar" :src="photourl"  />
-      <div class="text w-2/4" :class="sender ? 'bg-green-400 text-white p-2 rounded  w-10' : 'bg-gray-400 text-white p-2 rounded mb-3'">
+      <div class="text w-1/4" :class="sender ? 'bg-green-400 text-white p-2 rounded  w-10' : 'bg-gray-400 text-white p-2 rounded mb-3'">
         <slot />
 
       </div>

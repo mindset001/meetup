@@ -105,11 +105,13 @@ export default {
 .icon{
   width: 50px;
   height: 10px;
+  margin-top: -23px;
 }
 form{
   display: flex;
   padding: 0 2em;
   align-items: center;
+  justify-content: center;
   
   
 }
